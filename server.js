@@ -5,7 +5,6 @@ const methodOverride = require("method-override");
 const PORT = process.env.PORT || 8080;
 
 const app = express();
-const routes = require("./controllers/burgers_controller.js");
 
 app.use(express.static('public'));
 
@@ -22,6 +21,8 @@ app.engine("handlebars", exphbs({
 }));
 
 app.set("view engine", "handlebars");
+
+const routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 
